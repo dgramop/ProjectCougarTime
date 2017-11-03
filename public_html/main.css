@@ -1,0 +1,16 @@
+* {
+  font-family: 'Nunito', sans-serif; }
+
+.footer {
+  width: 5%;
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  width: 100%;
+  margin: 0%; }
+
+input[type=text].long, input[type=password].long, input[type=email].long {
+  transform: scale(1.5);
+  width: 60%; }
+
+/*# sourceMappingURL=main.css.map */
