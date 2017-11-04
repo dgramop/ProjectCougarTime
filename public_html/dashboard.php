@@ -16,10 +16,20 @@ if(Users::isLoggedIn()==false)
       Login to Cougar Time
     </div>
     <div class="text">
-      <form action="dashboard.php" method="post">
+      <form action="dashboard.php?login=true" method="post">
         <input class="long" type="text" name="username" placeholder="Username"/><br/>
-        <input class="long" type="password" name="password" placeholder="Password"/>
+        <input class="long" type="password" name="password" placeholder="Password"/><br/>
+        <input class="long" type="submit"/>
       </form>
+      <?php
+      if(isset($_GET["login"]))
+      {
+        if(Users::login($_POST["username"], $_POST["password"]))
+        {
+          $_SESSION["username"]=$_POST["username"];
+        }
+      }
+       ?>
     </div>
   </div>
 </center>
@@ -39,12 +49,22 @@ else if(Users::isLoggedIn()!==false && Users::getRole()=="teacher") //rendundanc
   <center>
     <div class="card">
       <div class="title">
-        Take Attendance for Cougar Time
+        Take Attendance for Cougar Time (<?php echo Users::isLoggedIn();?>'s class)
       </div>
       <div class="text">
-          <input class="long" id="id" type="text" placeholder="Student ID"/>
+          <input class="long" id="id" type="text" placeholder="Student ID" autofocus/>
       </div>
     </div>
+
+    <div class="card">
+      <div class="title">
+        Students:
+      </div>
+      <div id="stidlist" class="text">
+
+      </div>
+    </div>
+
   </center>
   <div class="footer">
   <div class="button" onclick="light()">Light theme</div>

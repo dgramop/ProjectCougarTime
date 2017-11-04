@@ -1,5 +1,6 @@
 <?php
 include_once("theme.class.php");
+session_start();
 class Topgen
 {
   public function Topgen($title="ProjectCT", $otherhtml="", $mainstylesheet="main.css", $mainscript="main.js", $googlefont="Nunito",$faviconlink="http://oaktonhs.fcps.edu/favicon.ico")

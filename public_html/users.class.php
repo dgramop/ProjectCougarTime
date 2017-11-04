@@ -1,15 +1,19 @@
 <?php
 class Users
 {
+  // ABSTRACT FUNCTION! Replace with proper auth API before deployment
   public static function isLoggedIn()
   {
     if(isset($_SESSION["username"]))
     {
       return $_SESSION["username"];
     }
-    return true;
+    else {
+      return false;
+    }
   }
 
+  // ABSTRACT FUNCTION! Replace with proper auth API before deployment
   public static function getRole()
   {
     $username=$_SESSION["username"];
@@ -20,8 +24,9 @@ class Users
     {
       return "student";
     }
-
-    return "teacher";
+    else {
+      return "teacher";
+    }
   }
 
   public static function logout()
@@ -29,9 +34,11 @@ class Users
     session_destroy();
   }
 
+  // ABSTRACT FUNCTION! Replace with proper auth API before deployment
   public static function login($username, $password)
   {
-    getRole($username);
+    //getRole();
+    return true;
   }
 }
 

@@ -5,6 +5,7 @@ function addStudent(number)
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   xhr.onreadystatechange = function() {
     if(xhr.status == 200) {
+      console.log(xhr.responseText);
       var returned=JSON.parse(xhr.responseText);
       if(returned.status=="success")
       {
@@ -26,6 +27,7 @@ document.getElementById("id").onkeypress=function keyforstudent(e)
     if(addStudent(document.getElementById("id").value))
     {
       toast("Added "+document.getElementById("id").value, "success")
+      document.getElementById("stidlist").innerHTML+=document.getElementById("id").value;
     }
     else
     {

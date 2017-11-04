@@ -1,8 +1,11 @@
 <?php
-include_once("users.class.php")
-if(isLoggedIn())
+include_once("users.class.php");
+if(Users::isLoggedIn()!==false)
 {
   $_POST["studentid"];
-  $_SESSION["username"];
+  echo '{"status":"success"}';
+}
+else {
+  echo '{"status":"error", "reason":"not logged in"}';
 }
 ?>
