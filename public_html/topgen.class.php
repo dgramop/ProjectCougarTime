@@ -17,6 +17,7 @@ class Topgen
   <link rel="shortcut icon" href="<?php echo $faviconlink; ?>">
   <script src="https://cdn.jsdelivr.net/npm/js-cookie@2<?php /*Should we use @latest? It could break compatibility, but we wont get bugfixes (vulns?)*/?>/src/js.cookie.min.js"></script>
   <script src="<?php echo $mainscript; ?>"></script>
+  <script src="http://matdark.dgramop.xyz/build/matdark.js"></script>
   <?php echo $otherhtml ?>
 </head>
 <?php  }

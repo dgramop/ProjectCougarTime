@@ -10,7 +10,7 @@ if(Users::isLoggedIn()==false)
   new Topgen("Project CougarTime - Staff Login");
 ?>
 <body class="dark-body">
-<center>
+<center><?php /*echo Users::getRole("selarson1@fcps.edu");*/ ?>
   <div class="card">
     <div class="title">
       Login to Cougar Time
@@ -35,7 +35,6 @@ else if(Users::isLoggedIn()!==false && Users::getRole()=="teacher") //rendundanc
 {
   new Topgen("Project CougarTime - Teacher Access/Take Attendance");
   ?>
-  <script src="attendance.js"></script>
   <body class="dark-body">
   <center>
     <div class="card">
@@ -43,9 +42,7 @@ else if(Users::isLoggedIn()!==false && Users::getRole()=="teacher") //rendundanc
         Take Attendance for Cougar Time
       </div>
       <div class="text">
-        <form>
-          <input class="long" type="text" placeholder="Student ID"/>
-        </form>
+          <input class="long" id="id" type="text" placeholder="Student ID"/>
       </div>
     </div>
   </center>
@@ -53,6 +50,7 @@ else if(Users::isLoggedIn()!==false && Users::getRole()=="teacher") //rendundanc
   <div class="button" onclick="light()">Light theme</div>
   <div class="button" onclick="dark()">Dark theme</div>
   </div>
+    <script src="attendance.js"></script> <!--Keep the script at the bottom so it can get dom, or you can go in and put some sort of onload around event registrars-->
   </body>
   </html>
 <?php
