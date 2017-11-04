@@ -1,8 +1,8 @@
 <?php
-include_once("users.class.php");
+session_start();
 if(Users::isLoggedIn()!==false)
 {
-  $_POST["studentid"];
+  //echo $_POST["studentid"];
   echo '{"status":"success"}';
 }
 else {

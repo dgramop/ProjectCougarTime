@@ -1,6 +1,7 @@
 <?php
 class Users
 {
+  //Make sure session_start(); has already been called
   // ABSTRACT FUNCTION! Replace with proper auth API before deployment
   public static function isLoggedIn()
   {
