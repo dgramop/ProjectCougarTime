@@ -1,12 +1,19 @@
 <?php
 include_once("users.class.php");
+include_once("jsonhttpresponse.class.php");
 session_start();
+header("Content-Type", "text/plain");
+$httpobj=new HttpResponse();
 if(Users::isLoggedIn()!==false)
 {
   //echo $_POST["studentid"];
-  echo '{"status":"success"}';
+  $httpobj->status=true;
+  $httpobj->message=$_POST["studentid"];
+  echo json_encode($httpobj);
 }
 else {
-  echo '{"status":"error", "reason":"not logged in"}';
+  $httpobj->status=false;
+  $httpobj->message="not logged in";
+  echo json_encode($httpobj);
 }
 ?>
