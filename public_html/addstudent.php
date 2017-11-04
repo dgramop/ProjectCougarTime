@@ -1,4 +1,5 @@
 <?php
+include_once("users.class.php");
 session_start();
 if(Users::isLoggedIn()!==false)
 {
