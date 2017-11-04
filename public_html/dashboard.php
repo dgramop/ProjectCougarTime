@@ -74,5 +74,7 @@ else if(Users::isLoggedIn()!==false && Users::getRole()=="teacher") //rendundanc
   </body>
   </html>
 <?php
+}else{
+  print Users::getRole();
 }
 ?>

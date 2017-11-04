@@ -21,7 +21,8 @@ class Users
     /*Assumes that the user is logged in!*/
     $parsedStudents=false;
     preg_match("/[0-9][0-9][0-9][0-9][0-9][0-9][0-9]/", $username, $parsedStudents);
-    if(strlen($username)==7 && !($parsedStudents===false))//make sure we use triple eq. so "false"!=false
+
+    if(isset($parsedStudents[0]) && strlen($parsedStudents[1])==7)//make sure we use triple eq. so "false"!=false
     {
       return "student";
     }

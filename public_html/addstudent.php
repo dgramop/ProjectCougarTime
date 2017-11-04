@@ -8,7 +8,7 @@ if(Users::isLoggedIn()!==false)
 {
   //echo $_POST["studentid"];
   $httpobj->status=true;
-  $httpobj->message=$_POST["studentid"];
+  $httpobj->message=htmlspecialchars($_POST["studentid"]);
   echo json_encode($httpobj);
 }
 else {

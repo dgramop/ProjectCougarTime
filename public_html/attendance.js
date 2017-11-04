@@ -21,7 +21,7 @@ document.getElementById("id").onkeypress=function keyforstudent(e)
       if(stuff.status)
       {
         toast("Added "+document.getElementById("id").value, "success")
-        document.getElementById("stidlist").innerHTML+=document.getElementById("id").value;
+        document.getElementById("stidlist").innerHTML+=stuff.message+"<br/>";
       }
       else
       {
